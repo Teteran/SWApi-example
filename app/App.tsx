@@ -1,6 +1,6 @@
 import * as React from 'react';
-import {Provider as PaperProvider} from 'react-native-paper';
-import {Text} from 'react-native';
+import { Provider as PaperProvider } from 'react-native-paper';
+import { Text } from 'react-native';
 
 export default function App() {
   return (
