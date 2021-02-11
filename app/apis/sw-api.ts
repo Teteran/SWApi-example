@@ -1,6 +1,6 @@
 import { Api } from './api';
 import { AxiosRequestConfig, AxiosResponse } from 'axios';
-import { Person, Starship } from './../../models';
+import { Person, Starship } from './../models';
 
 const apiConfig = {
   returnRejectedPromiseOnError: true,
@@ -15,7 +15,7 @@ const apiConfig = {
 };
 
 export class SWApi extends Api {
-  constructor(config: AxiosRequestConfig) {
+  constructor(config?: AxiosRequestConfig) {
     super(config);
   }
 

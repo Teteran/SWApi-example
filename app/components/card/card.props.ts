@@ -10,5 +10,5 @@ export interface ShipCardProps extends CardProps {
 }
 
 export interface PersonCardProps extends CardProps {
-  mass: number;
+  mass: number | string;
 }

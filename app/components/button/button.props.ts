@@ -7,6 +7,6 @@ export interface ButtonProps extends PaperButtonProps {
   title?: string;
   icon?: string;
   mode?: string;
-  onPress?: () => void;
+  onPress: () => void;
   children?: React.ReactNode;
 }

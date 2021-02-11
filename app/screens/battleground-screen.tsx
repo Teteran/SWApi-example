@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback, useReducer } from 'react';
 import axios from 'axios';
 import { View } from 'react-native';
 import { Screen, Card, Button } from '../components';
-import { swApi } from '../services/apis';
+import { swApi } from '../apis';
 import { Avatar, Text } from 'react-native-paper';
 import { Player } from './../models/player';
 
@@ -30,7 +30,7 @@ const initialState: BattleState = {
   winner: undefined,
 };
 
-function reducer(state: BattleState, action: ActionType) {
+export function reducer(state: BattleState, action: ActionType) {
   switch (action.type) {
     case 'battle':
       const leftPlayerCard = action.leftPlayer.card;
@@ -86,7 +86,6 @@ export function BattleGround() {
   }, [fetchFighters]);
 
   const { leftPlayer, rightPlayer, winner } = state;
-  console.log('the winner is ', winner);
   return (
     <Screen>
       <View
@@ -104,7 +103,7 @@ export function BattleGround() {
             <Text>score:{leftPlayer?.score}</Text>
           </Card>
           <Avatar.Icon size={56} icon={isLoading ? 'reload' : 'sword-cross'} />
-          <Card name={rightPlayer?.card?.name} crew={rightPlayer?.card?.mass}>
+          <Card name={rightPlayer?.card?.name} mass={rightPlayer?.card?.mass}>
             <Text>score:{rightPlayer?.score}</Text>
           </Card>
         </View>

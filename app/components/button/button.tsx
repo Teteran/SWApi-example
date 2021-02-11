@@ -4,12 +4,12 @@ import { Button as PaperButton } from 'react-native-paper';
 import { ButtonProps } from './button.props';
 
 export function Button(props: ButtonProps) {
-  const { title, children, onPress, ...rest } = props;
+  const { title, children, onPress } = props;
 
   const content = children || <Text>{title}</Text>;
 
   return (
-    <PaperButton onPress={onPress} {...rest}>
+    <PaperButton testID={'button'} onPress={onPress}>
       {content}
     </PaperButton>
   );
